@@ -8,18 +8,20 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.mongodb.core.index.Indexed;
 
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Cat {
     private String name;
     @NotNull
     private Integer chip;
     private Boolean sociable;
-    @NotNull
+    @NotBlank
     @JsonFormat(pattern = "yyyy-MM-dd")
     private String admissionDate;
     @JsonFormat(pattern = "yyyy-MM-dd")

@@ -27,10 +27,11 @@ public class AdopterMicroserviceRest implements AdopterMicroservice {
         this.webClientBuilder = webClientBuilder;
     }
 
+    @Override
     public Mono<Adopter> readByNif(String nif) {
         return webClientBuilder.build()
                         .get()
-                        .uri(adopterUri + ADOPTERS +NIF_VAL, nif)
+                        .uri(adopterUri + ADOPTERS + NIF_VAL, nif)
                         .exchange()
                 .onErrorResume(exception ->
                         Mono.error(new BadGatewayException("Unexpected error. Adopter Microservice. " + exception.getMessage())))

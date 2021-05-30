@@ -5,6 +5,6 @@ import reactor.core.publisher.Mono;
 
 public interface AdopterMicroservice {
 
-    public Mono<Adopter> readByNif(String nif);
+    Mono<Adopter> readByNif(String nif);
 
 }

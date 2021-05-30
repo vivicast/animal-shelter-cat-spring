@@ -1,4 +1,4 @@
-package es.animal.protection.animalshelter.infrastructure.exceptionsHandler;
+package es.animal.protection.animalshelter.infrastructure.exceptions_handler;
 
 
 import es.animal.protection.animalshelter.domain.exceptions.BadRequestException;
